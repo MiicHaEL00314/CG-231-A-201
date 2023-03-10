@@ -89,13 +89,15 @@ function EscaladoReal(fig, posini ,vs){
         var arrowZ = new THREE.ArrowHelper( z, origin, arrowSize, colorB );
 			
         //Cámara
-        camera.position.x = 000;
-        camera.position.y = 100;
-        camera.position.z = 400;
+        camera.position.x = 50;
+        camera.position.y = 50;
+        camera.position.z = 200;
         camera.lookAt(scene.position);
 
         //Creación de las Figuras
+
         //Geometria de la piramide
+        
         lado= 30;   //lado de la base de la piramide
         h= 45; //altura de la piramide
 
@@ -104,7 +106,7 @@ function EscaladoReal(fig, posini ,vs){
         geompiramide= Geometria(vertices);
 
         // Colores para las piramides
-        color = [{color:0x00ff00},{color:0x00ff00}];
+        color = [{color:0xff8000},{color:0x0000ff}];
         
         
         //Material para las piramides
@@ -119,7 +121,7 @@ function EscaladoReal(fig, posini ,vs){
             piramide.push(new THREE.Line(geompiramide, material[i]));
         
         // Girar la piramide
-        
+        EscaladoReal(piramide[1], [lado/2, 0, lado/2], [1, -1, 1]);
 
         // En el documento HTML
         document.body.appendChild(renderer.domElement);
